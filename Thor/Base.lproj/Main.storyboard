@@ -380,6 +380,20 @@
                                     <action selector="toggleEnableShortcut:" target="LfM-H7-njo" id="wyA-Z5-TGh"/>
                                 </connections>
                             </button>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="new-bg-background-when-active-btn">
+                                <rect key="frame" x="45" y="351" width="280" height="18"/>
+                                <buttonCell key="cell" type="check" title="Repeated activation toggles app between foreground and background" bezelStyle="regularSquare" imagePosition="left" state="off" inset="2" id="new-bg-background-when-active-cell">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name="STHeitiSC-Light"/>
+                                </buttonCell>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="new-bg-background-when-active-width"/>
+                                    <constraint firstAttribute="height" constant="28" id="new-bg-background-when-active-height"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="toggleBackgroundWhenActive:" target="LfM-H7-njo" id="new-bg-background-when-active-action"/>
+                                </connections>
+                            </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="prA-Il-0qM">
                                 <rect key="frame" x="83" y="13" width="200" height="32"/>
                                 <buttonCell key="cell" type="push" title="Quit Thor" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="2nX-9N-OOj">
@@ -496,7 +510,10 @@
                             <constraint firstItem="hWC-9z-cv3" firstAttribute="top" secondItem="ySw-Wg-Pgf" secondAttribute="bottom" constant="1" id="R7Z-q7-uy1"/>
                             <constraint firstItem="XJy-eX-prE" firstAttribute="leading" secondItem="Crp-4s-mEo" secondAttribute="leading" constant="47" id="TPK-B1-dpv"/>
                             <constraint firstItem="Lcx-bw-woE" firstAttribute="top" secondItem="d3U-w9-jNg" secondAttribute="bottom" constant="35" id="YWI-qf-QpZ"/>
-                            <constraint firstItem="d3U-w9-jNg" firstAttribute="top" secondItem="7sy-3X-TvI" secondAttribute="bottom" constant="35" id="Yns-4x-PP5"/>
+                            <constraint firstItem="d3U-w9-jNg" firstAttribute="top" secondItem="new-bg-background-when-active-btn" secondAttribute="bottom" constant="35" id="Yns-4x-PP5"/>
+                            <constraint firstItem="new-bg-background-when-active-btn" firstAttribute="top" secondItem="7sy-3X-TvI" secondAttribute="bottom" constant="35" id="new-bg-background-when-active-top"/>
+                            <constraint firstItem="new-bg-background-when-active-btn" firstAttribute="leading" secondItem="7sy-3X-TvI" secondAttribute="leading" id="new-bg-background-when-active-leading"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="new-bg-background-when-active-btn" secondAttribute="trailing" constant="20" symbolic="YES" id="new-bg-background-when-active-trailing"/>
                             <constraint firstItem="7sy-3X-TvI" firstAttribute="leading" secondItem="ych-hK-1qT" secondAttribute="leading" id="dgY-s3-y2Y"/>
                             <constraint firstItem="ych-hK-1qT" firstAttribute="top" secondItem="Lcx-bw-woE" secondAttribute="bottom" constant="35" id="dt7-ok-vmd"/>
                             <constraint firstItem="cIc-ga-45L" firstAttribute="top" secondItem="ych-hK-1qT" secondAttribute="bottom" constant="20" id="e9X-KM-xgc"/>
@@ -519,6 +536,7 @@
                         <outlet property="btnEnableMenuBarIconShowHideKey" destination="Lcx-bw-woE" id="ZxA-zv-c8A"/>
                         <outlet property="btnEnableShortcut" destination="7sy-3X-TvI" id="qGM-kS-fk6"/>
                         <outlet property="btnLaunchAtLogin" destination="XJy-eX-prE" id="xKD-J0-ALg"/>
+                        <outlet property="btnBackgroundWhenActive" destination="new-bg-background-when-active-btn" id="new-bg-background-when-active-outlet"/>
                         <outlet property="btnShortcutDeactivateKey" destination="0zk-yi-rDJ" id="OzF-KE-TX0"/>
                         <outlet property="slider" destination="9mT-en-uZb" id="ZmK-N7-ClV"/>
                     </connections>

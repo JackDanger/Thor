@@ -21,7 +21,10 @@ struct ShortcutMonitor {
                 if let frontmostAppIdentifier = NSWorkspace.shared.frontmostApplication?.bundleIdentifier,
                     let targetAppIdentifier = Bundle(url: app.appBundleURL)?.bundleIdentifier,
                     frontmostAppIdentifier == targetAppIdentifier {
-                    NSRunningApplication.runningApplications(withBundleIdentifier: frontmostAppIdentifier).first?.hide()
+                    // Only hide if backgroundWhenActive is enabled
+                    if defaults[.backgroundWhenActive] {
+                        NSRunningApplication.runningApplications(withBundleIdentifier: frontmostAppIdentifier).first?.hide()
+                    }
                 } else {
                     if #available(macOS 10.15, *) {
                         let configuration = NSWorkspace.OpenConfiguration()
