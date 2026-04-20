@@ -15,7 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: Properties
 
-    var hasLaunched = false
     var isGoingToDisableShortcut = false
 
     var anewShortcutTimer: Timer?
@@ -61,14 +60,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         if AppsManager.manager.selectedApps.count == 0 {
             showMainWindow()
-        }
-    }
-
-    func applicationWillBecomeActive(_ notification: Notification) {
-        if hasLaunched {
-            showMainWindow()
-        } else {
-            hasLaunched = true
         }
     }
 
